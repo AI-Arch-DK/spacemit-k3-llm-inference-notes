@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use these measurements or the patch, please cite this repository."
+title: "SpacemiT K3 LLM inference notes: llama.cpp on the IME2 / A100 cores"
+abstract: >-
+  Measurements of LLM generation and embeddings on a SpacemiT K3 Pico-ITX (8 GB, Bianbu 4.0.1) with
+  upstream llama.cpp, llama.cpp-tools-spacemit and Ollama, including a one-line fix for wrong
+  token-by-token decode in the IME2 flash-attention kernel of llama.cpp.
+type: dataset
+authors:
+  - alias: AI-Arch-DK
+date-released: 2026-10-28
+license:
+  - CC-BY-4.0
+  - MIT
+repository-code: "https://github.com/AI-Arch-DK/spacemit-k3-llm-inference-notes"
+keywords:
+  - SpacemiT K3
+  - K3 Pico-ITX
+  - RISC-V
+  - llama.cpp
+  - IME2
+  - LLM inference
+  - Qwen2.5
+  - Qwen3-Embedding

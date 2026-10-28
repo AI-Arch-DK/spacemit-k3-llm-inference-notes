@@ -1,0 +1,27 @@
+date,system,clocks_x100_a100_ghz,build,cores,model,quant,pp512_tok_s,tg128_tok_s,runs,note
+2026-10-21,factory (kernel 1.0.1.4),2.2/1.8,upstream llama.cpp 0a1ef30 generic CPU (RVV),X100 x8 (-t 8 -C 0-7),Qwen2.5-7B-Instruct,Q4_K_M,10.03,3.41,5 (median),
+2026-10-21,factory (kernel 1.0.1.4),2.2/1.8,upstream llama.cpp 0a1ef30 generic CPU (RVV),A100 x8 as AI threads,Qwen2.5-7B-Instruct,Q4_K_M,0.51,0.46,1,generic RVV path is unusable on VLEN 1024 cores
+2026-10-21,factory (kernel 1.0.1.4),2.2/1.8,llama.cpp-tools-spacemit 0.1.9,A100 x8 (runtime picks them),Qwen2.5-7B-Instruct,Q4_K_M,42.88,5.65,5 (median),decode output is wrong (see docs/decode-bug)
+2026-10-21,factory (kernel 1.0.1.4),2.2/1.8,llama.cpp-tools-spacemit 0.1.9 -t 8,A100 x8,Qwen2.5-7B-Instruct,Q4_K_M,42.84,5.63,5 (median),-t is ignored by the runtime
+2026-10-21,factory (kernel 1.0.1.4),2.2/1.8,llama.cpp-tools-spacemit 0.1.9 -t 16,A100 x8,Qwen2.5-7B-Instruct,Q4_K_M,42.82,5.61,5 (median),-t is ignored by the runtime
+2026-10-21,factory (kernel 1.0.1.4),2.2/1.8,upstream llama.cpp 0a1ef30 generic CPU (RVV),X100 x8 (-t 16),Qwen2.5-3B-Instruct,Q4_K_M,22.54,5.95,3 (median),
+2026-10-21,factory (kernel 1.0.1.4),2.2/1.8,upstream llama.cpp 0a1ef30 generic CPU (RVV),X100 x8 (-t 16),Qwen2.5-1.5B-Instruct,Q4_K_M,46.18,9.77,3 (median),
+2026-10-21,factory (kernel 1.0.1.4),2.2/1.8,llama.cpp-tools-spacemit 0.1.9,A100 x8,Qwen2.5-3B-Instruct,Q4_K_M,91.41,12.43,3 (median),decode output is wrong
+2026-10-21,factory (kernel 1.0.1.4),2.2/1.8,llama.cpp-tools-spacemit 0.1.9,A100 x8,Qwen2.5-1.5B-Instruct,Q4_K_M,182.79,22.69,3 (median),decode output is wrong
+2026-10-21,factory (kernel 1.0.1.4),2.4/2.0 (performance governor),upstream llama.cpp 0a1ef30 generic CPU (RVV),X100 x8 (-t 16),Qwen2.5-7B-Instruct,Q4_K_M,10.75,3.28,3 (median),
+2026-10-21,factory (kernel 1.0.1.4),2.2/1.8,upstream llama.cpp 0a1ef30 generic CPU (RVV),X100 x8,Qwen2.5-7B-Instruct,Q4_K_M,,2.96,1,tg128 at context depth 2048 (-d 2048)
+2026-10-21,factory (kernel 1.0.1.4),2.2/1.8,llama.cpp-tools-spacemit 0.1.9,A100 x8,Qwen2.5-7B-Instruct,Q4_K_M,,4.24,1,tg128 at context depth 2048 (-d 2048)
+2026-10-21,factory (kernel 1.0.1.4),2.2/1.8,llama.cpp-tools-spacemit 0.1.9,A100 x8,Qwen2.5-7B-Instruct,Q4_K_M,,2.45,1,tg128 at context depth 8192 (-d 8192); max RSS 7.40 GB of 7.93
+2026-10-22,updated (kernel 1.0.8.4),2.0/1.8,llama.cpp-tools-spacemit 0.1.9,A100 x8,Qwen2.5-7B-Instruct,Q4_K_M,42.7,5.06,3 (tg: 5.07 5.06 5.06),quiet board after the update
+2026-10-22,updated (kernel 1.0.8.4),2.0/1.8,upstream llama.cpp 0a1ef30 generic CPU (RVV),X100 x8,Qwen2.5-7B-Instruct,Q4_K_M,9.07,3.10,,quiet board after the update
+2026-10-26,updated (kernel 1.0.8.4),2.0/1.8,llama.cpp-tools-spacemit 0.1.9,A100 x8,Qwen2.5-7B-Instruct,Q4_K_M,42.4,5.06,,
+2026-10-26,updated (kernel 1.0.8.4),2.4/2.0 (cpufreq boost=1),llama.cpp-tools-spacemit 0.1.9,A100 x8,Qwen2.5-7B-Instruct,Q4_K_M,46.5,5.10,,A100 results are corrupted at this clock (see docs/clocks)
+2026-10-26,updated (kernel 1.0.8.4),2.0/1.8,upstream llama.cpp 0a1ef30 generic CPU (RVV),X100 x8,Qwen2.5-7B-Instruct,Q4_K_M,,3.11,,
+2026-10-26,updated (kernel 1.0.8.4),2.4/2.0 (cpufreq boost=1),upstream llama.cpp 0a1ef30 generic CPU (RVV),X100 x8,Qwen2.5-7B-Instruct,Q4_K_M,,3.30,,X100 at 2.4 GHz computes correctly
+2026-10-26,updated (kernel 1.0.8.4),2.0/1.8,upstream llama.cpp 0a1ef30 + GGML_CPU_RISCV64_SPACEMIT (IME2),A100 x8 (backend picks them),Qwen2.5-7B-Instruct,Q4_K_M,38.48,5.08,3 (mean),same decode defect as the vendor package
+2026-10-26,updated (kernel 1.0.8.4),2.0/1.8,upstream + IME2 with -fa off,A100 x8,Qwen2.5-7B-Instruct,Q4_K_M,35.55,4.98,3 (mean),workaround without patching
+2026-10-26,updated (kernel 1.0.8.4),2.0/1.8,upstream + IME2 + FA fix (patches/0001),A100 x8,Qwen2.5-7B-Instruct,Q4_K_M,40.09,5.12,3 (mean),
+2026-10-26,updated (kernel 1.0.8.4),2.0/1.8,upstream + IME2 + FA fix (patches/0001),A100 x8,Qwen2.5-7B-Instruct,Q4_0 --pure,58.96,6.36,3 (mean),all tensors Q4_0; quantized from the official F16
+2026-10-27,updated (kernel 1.0.8.4),2.0/1.8,upstream + IME2 + FA fix (patches/0001),A100 x8,Qwen2.5-7B-Instruct,Q4_0 (default mix: output Q6_K),57.54,5.97,3 (mean),recommended format; quantized from the official F16
+2026-10-27,updated (kernel 1.0.8.4),2.0/1.8,upstream + IME2 + FA fix (patches/0001),A100 x8,Qwen2.5-3B-Instruct,Q4_K_M,90.41,11.16,3 (mean),Q4_K repack loss: KLD 0.10
+2026-10-27,updated (kernel 1.0.8.4),2.0/1.8,upstream + IME2 + FA fix (patches/0001),A100 x8,Qwen2.5-1.5B-Instruct,Q4_K_M,181.33,20.44,3 (mean),

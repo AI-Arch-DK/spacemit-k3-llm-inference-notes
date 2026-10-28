@@ -1,0 +1,38 @@
+# X100/A100 OPP tables from the k3-pico-itx device tree: MHz/mV (first opp-microvolt value)
+# old.dtb  - package linux-image-6.18.3-generic 6.18.3-1.0.1.4 (factory kernel; sha256 of the .deb 251fc3b1...cfdb)
+# new_file - /boot/spacemit/6.18.3-generic/k3-pico-itx.dtb after the update to 6.18.3-1.0.8.4; live - /sys/firmware/fdt
+######## old.dtb
+/cpus/cpu@0 operating-points-v2 -> ['/cpus/opp_table0_x100'] {}
+/cpus/cpu@8 operating-points-v2 -> ['/cpus/opp_table0_a100'] {}
+/cpus/opp_table0_a100 [14] {'compatible': 'operating-points-v2', 'opp-shared': [], } 1000/ 1100/ 1200/ 1300/ 1400/ 1500/ 1600/ 1700/ 1800/ 1850/ 1900/ 2000/ 614/ 819/
+/cpus/opp_table0_x100 [19] {'compatible': 'operating-points-v2', 'opp-shared': [], } 1000/800 1100/850 1200/850 1300/850 1400/850 1500/850 1600/880 1700/880 1800/880 1850/880 1900/880 2000/880 2100/880 2150/880 2200/880 2300/880 2400/1000 614/800 819/800
+######## new_file.dtb
+/cpus/cpu@0 operating-points-v2 -> ['/cpus/opp_table0_x100', '/cpus/opp_table1_x100'] {}
+/cpus/cpu@8 operating-points-v2 -> ['/cpus/opp_table0_a100'] {}
+/cpus/opp_table0_a100 [14] {'compatible': 'operating-points-v2', 'opp-shared': [], } 1000/ 1100/ 1200/ 1300/ 1400/ 1500/ 1600/ 1700/ 1800/ 1850/ 1900/ 2000/ 614/ 819/
+/cpus/opp_table0_x100 [19] {'compatible': 'operating-points-v2', 'opp-shared': [], } 1000/950 1100/950 1200/950 1300/950 1400/950 1500/950 1600/950 1700/950 1800/950 1850/950 1900/950 2000/950 2100/950 2150/950 2200/950 2300/1000 2400/1000 614/950 819/950
+/cpus/opp_table1_x100 [19] {'compatible': 'operating-points-v2', 'opp-shared': [], } 1000/910 1100/910 1200/910 1300/910 1400/910 1500/910 1600/910 1700/910 1800/910 1850/910 1900/910 2000/910 2100/910 2150/910 2200/950 2300/1000 2400/1000 614/910 819/910
+######## live.dtb
+/cpus/cpu@0 operating-points-v2 -> ['/cpus/opp_table0_x100', '/cpus/opp_table1_x100'] {}
+/cpus/cpu@8 operating-points-v2 -> ['/cpus/opp_table0_a100'] {}
+/cpus/opp_table0_a100 [14] {'compatible': 'operating-points-v2', 'opp-shared': [], } 1000/ 1100/ 1200/ 1300/ 1400/ 1500/ 1600/ 1700/ 1800/ 1850/ 1900/ 2000/ 614/ 819/
+/cpus/opp_table0_x100 [19] {'compatible': 'operating-points-v2', 'opp-shared': [], } 1000/950 1100/950 1200/950 1300/950 1400/950 1500/950 1600/950 1700/950 1800/950 1850/950 1900/950 2000/950 2100/950 2150/950 2200/950 2300/1000 2400/1000 614/950 819/950
+/cpus/opp_table1_x100 [19] {'compatible': 'operating-points-v2', 'opp-shared': [], } 1000/910 1100/910 1200/910 1300/910 1400/910 1500/910 1600/910 1700/910 1800/910 1850/910 1900/910 2000/910 2100/910 2150/910 2200/950 2300/1000 2400/1000 614/910 819/910
+######## turbo-mode (live)
+/cpus/opp_table0_a100/opp1850000000
+/cpus/opp_table0_a100/opp1900000000
+/cpus/opp_table0_a100/opp2000000000
+/cpus/opp_table0_x100/opp2200000000
+/cpus/opp_table0_x100/opp2300000000
+/cpus/opp_table0_x100/opp2400000000
+/cpus/opp_table1_x100/opp2200000000
+/cpus/opp_table1_x100/opp2300000000
+/cpus/opp_table1_x100/opp2400000000
+/cpus/opp_table0_x100/opp1200000000 {'opp-microvolt': [950000, 950000, 954000], 'clock-latency-ns': [200000]}
+/cpus/opp_table0_x100/opp2000000000 {'opp-microvolt': [950000, 950000, 954000], 'clock-latency-ns': [200000]}
+/cpus/opp_table0_x100/opp2150000000 {'opp-microvolt': [950000, 950000, 954000], 'clock-latency-ns': [200000]}
+/cpus/opp_table0_x100/opp2200000000 {'opp-microvolt': [950000, 950000, 954000], 'clock-latency-ns': [200000], 'turbo-mode': []}
+/cpus/opp_table1_x100/opp1200000000 {'opp-microvolt': [910000, 910000, 914000], 'clock-latency-ns': [200000]}
+/cpus/opp_table1_x100/opp2000000000 {'opp-microvolt': [910000, 910000, 914000], 'clock-latency-ns': [200000]}
+/cpus/opp_table1_x100/opp2150000000 {'opp-microvolt': [910000, 910000, 914000], 'clock-latency-ns': [200000]}
+/cpus/opp_table1_x100/opp2200000000 {'opp-microvolt': [950000, 950000, 954000], 'clock-latency-ns': [200000], 'turbo-mode': []}

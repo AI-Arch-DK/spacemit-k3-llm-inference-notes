@@ -1,0 +1,6 @@
+# Qwen/Qwen2.5-7B-Instruct-GGUF F16 reference used for all KLD runs: sha256, size in bytes, file name
+134386a760a6b4b69dfe7e7139d96b56c490455e0f66cfb53ce5ec406a5dca6f 3951521376 qwen2.5-7b-instruct-fp16-00001-of-00004.gguf
+d62b2aebad493fc1dc37cf04f264a370d1557a710f5ed34fb4c66d180c823cc4 3864909312 qwen2.5-7b-instruct-fp16-00002-of-00004.gguf
+09176e706fb2ef2bf4d65529ee32ae0549e00e517bdfd54fcc5cc9919b59995c 3864894976 qwen2.5-7b-instruct-fp16-00003-of-00004.gguf
+cd60424ae5289f18906d36272d44e93de49c3ddd3f88826a2f24ce1e06502f97 3556527872 qwen2.5-7b-instruct-fp16-00004-of-00004.gguf
+revision bb5d59e06d9551d752d08b292a50eb208b07ab1f
