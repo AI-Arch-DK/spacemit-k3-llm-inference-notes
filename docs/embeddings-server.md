@@ -81,9 +81,12 @@ Ollama with default settings and with `num_ctx 8192` ([`data/embedding_long_text
 
 - **Vendor vs upstream: cosine 0.9996–0.99985 at every length**, including 6,145 and 7,013 tokens: no
   outliers on long batches for the embedder.
-- Vendor is faster at every length, but the lead shrinks on long texts: 1,025 tokens — 2.6–2.8 s vs 14.7–14.8 s
-  (5.2–5.6×); 2,049 — 7.7–8.1 s vs 34.8 s (4.3–4.5×); 4,097 — 43–45 s vs 91 s (2.0–2.1×); 6,145 — 91.9 vs
-  169.8 s (1.85×); 7,013 — 115.7 vs 208.3 s (1.8×).
+- Vendor is faster at every length; by how much depends on the length and on the text set. Synthetic
+  texts: 1,025 tokens — 2.6–2.8 s vs 14.7–14.8 s (5.2–5.6×); 2,049 — 7.7–8.1 s vs 34.8 s (4.3–4.5×);
+  4,097 — 43–45 s vs 91 s (2.0–2.1×); 6,145 — 91.9 vs 169.8 s (1.85×). Records of a real index cut to
+  6,000 characters (1,567–2,576 tokens): 2.3–2.75×; long records in full (4,340–7,013 tokens): 1.8–2.0×
+  (7,013 — 115.7 vs 208.3 s). On index records of ~2,000 tokens the vendor took 13.2–15.6 s against
+  7.7–8.1 s on synthetic text of 2,049 tokens (upstream: 32.6–37.7 vs 34.8 s); why — not investigated [NV].
 - Vendor vs Ollama without truncation: 0.9985–0.99987.
 - 8,001 tokens were not sent to the vendor server (does not fit in 8 GB, see below).
 - A 4,097-token text on a `-c 4096` server is rejected with `exceeds the available context size`: the
